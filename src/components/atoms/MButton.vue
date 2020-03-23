@@ -1,0 +1,31 @@
+<template lang="pug">
+  button(
+    :class="[expanse ? 'expanse' : '', roundLeft ? 'round-left' : '', roundRight ? 'round-right' : '']"
+    ) {{label}}
+</template>
+
+<script>
+export default {
+  props: {
+    label: String,
+    expanse: Boolean,
+    roundRight: Boolean,
+    roundLeft: Boolean
+  }
+};
+</script>
+
+<style lang="sass" scoped>
+button
+    border: 1px solid grey
+    font-size: 1em
+    box-sizing: border-box
+    padding: 0.5em 1em
+    cursor: pointer
+.round-left
+  border-radius: 5px 0px 0px 5px
+.round-right
+  border-radius: 0px 5px 5px 0px
+.expanse
+    width: 100%
+</style>
