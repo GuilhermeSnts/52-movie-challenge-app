@@ -1,9 +1,10 @@
 <template lang="pug">
   div(class="movie-search")
-    MInput(
+    MDatalist(
       expanse
       roundLeft
       placeholder="Add a movie"
+      :data="movieList"
       )
     MButton(
       label="Add"
@@ -13,11 +14,14 @@
 
 <script>
 import MButton from "../atoms/MButton";
-import MInput from "../atoms/MInput";
+import MDatalist from "../atoms/MDatalist";
 export default {
   components: {
     MButton,
-    MInput
+    MDatalist
+  },
+  props: {
+    movieList: Array
   }
 };
 </script>
