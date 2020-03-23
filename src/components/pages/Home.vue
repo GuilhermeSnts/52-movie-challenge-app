@@ -7,7 +7,7 @@
 // @ is an alias to /src
 import Home from "../templates/Home.vue";
 export default {
-  name: "Home",
+  name: "HomePage",
   components: {
     Home
   }
