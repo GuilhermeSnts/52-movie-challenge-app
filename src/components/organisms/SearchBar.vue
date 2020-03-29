@@ -1,10 +1,10 @@
 <template lang="pug">
   div(class="search-bar")
-    MovieSearch( :movieList="['A','B']")
+    WSearch( :movieList="getMoviesList" @search="searchMovies")
 </template>
 
 <script>
-import MovieSearch from "../molecules/MovieSearch";
+import WSearch from "../molecules/WSearch";
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "search-bar",
@@ -12,10 +12,10 @@ export default {
     MovieSearch
   },
   computed: {
-    ...mapGetters("movies", [])
+    ...mapGetters("movies", ["getMoviesList"])
   },
   methods: {
-    ...mapActions("movies", [])
+    ...mapActions("movies", ["searchMovies"])
   }
 };
 </script>
@@ -26,4 +26,8 @@ export default {
   padding: 10px 15px
   background-color: lightblue
   box-shadow: 0px 0px 5px grey
+  display: flex
+  flex-flow: row
+  justify-content: center
+  vertical-align: middle
 </style>

@@ -6,7 +6,7 @@
 <script>
 import SearchBar from "../organisms/SearchBar";
 export default {
-  name: "UserMovieTemplate",
+  name: "MoviesTemplate",
   components: {
     SearchBar
   }

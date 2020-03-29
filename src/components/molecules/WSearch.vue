@@ -1,33 +1,40 @@
 <template lang="pug">
-  div(class="movie-search")
-    MDatalist(
+  div(class="wsearch")
+    WDatalist(
       expanse
       roundLeft
       placeholder="Add a movie"
       :data="movieList"
+      @filter="toSearch"
       )
-    MButton(
+    WButton(
       label="Add"
       roundRight
       )
 </template>
 
 <script>
-import MButton from "../atoms/MButton";
-import MDatalist from "../atoms/MDatalist";
+import WButton from "../atoms/WButton";
+import WDatalist from "../atoms/WDatalist";
 export default {
   components: {
-    MButton,
-    MDatalist
+    WButton,
+    WDatalist
   },
+
   props: {
     movieList: Array
+  },
+  methods: {
+    toSearch(term) {
+      this.$emit("search", term);
+    }
   }
 };
 </script>
 
 <style lang="sass" scoped>
-.movie-search
+.wsearch
   display: flex
   flex-direction: row
 </style>

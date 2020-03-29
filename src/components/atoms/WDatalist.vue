@@ -1,12 +1,16 @@
 <template lang="pug">
   div
-    input(type="text" list="list" :placeholder="placeholder" :class="[expanse ? 'expanse' : '', roundLeft ? 'round-left' : '', roundRight ? 'round-right' : '']")
+    input(type="text" v-model="filter" list="list" :placeholder="placeholder" :class="[expanse ? 'expanse' : '', roundLeft ? 'round-left' : '', roundRight ? 'round-right' : '']")
     datalist#list
-      option(v-for="(option, index) in data" :key="index") {{option}}
+      option(v-for="(option, index) in data" :key="index" :data-value="option.id") {{option.title}}
 </template>
 
 <script>
 export default {
+  data: () => ({
+    filter: ""
+  }),
+
   props: {
     placeholder: String,
     data: Array,
@@ -14,6 +18,13 @@ export default {
     expanse: Boolean,
     roundRight: Boolean,
     roundLeft: Boolean
+  },
+
+  watch: {
+    filter(val) {
+      console.log(val);
+      this.$emit("filter", val);
+    }
   }
 };
 </script>
