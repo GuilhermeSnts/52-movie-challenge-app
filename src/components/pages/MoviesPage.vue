@@ -1,15 +1,15 @@
 <template lang="pug">
   div(class="user-movies")
-    SearchBar
+    MoviesTemplate
 </template>
 
 <script>
-import SearchBar from "../templates/UserMovies";
+import MoviesTemplate from "../templates/MoviesTemplate";
 import { mapActions } from "vuex";
 export default {
   name: "UserMoviesPage",
   components: {
-    SearchBar
+    MoviesTemplate
   },
   methods: {
     ...mapActions("movies", ["createTMDBSession"])

@@ -9,7 +9,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "search-bar",
   components: {
-    MovieSearch
+    WSearch
   },
   computed: {
     ...mapGetters("movies", ["getMoviesList"])

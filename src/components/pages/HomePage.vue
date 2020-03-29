@@ -1,15 +1,15 @@
 <template lang="pug">
   div (class=".home")
-    Home
+    HomeTemplate
 </template>
 
 <script>
 // @ is an alias to /src
-import Home from "../templates/Home.vue";
+import HomeTemplate from "../templates/HomeTemplate.vue";
 export default {
   name: "HomePage",
   components: {
-    Home
+    HomeTemplate
   }
 };
 </script>
