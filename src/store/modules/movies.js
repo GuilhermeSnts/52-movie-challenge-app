@@ -3,6 +3,7 @@ import axios from "axios";
 export default {
   namespaced: true,
   state: {
+    watchedMovies: [],
     guestSession: "",
     movieList: [],
     movieApiKey: ""
@@ -13,6 +14,9 @@ export default {
     },
     getMovieApiKey(state) {
       return state.movieApiKey;
+    },
+    getWatchedMovies(state) {
+      return state.watchedMovies;
     }
   },
   mutations: {
