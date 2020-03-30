@@ -1,3 +1,4 @@
 <template lang="pug">
-    li
+  div(class="list")
+    slot
 </template>
