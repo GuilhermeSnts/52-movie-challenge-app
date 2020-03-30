@@ -1,6 +1,7 @@
 <template lang="pug">
   button(
     :class="[expanse ? 'expanse' : '', roundLeft ? 'round-left' : '', roundRight ? 'round-right' : '']"
+    v-on:click="$emit('clicked')"
     ) {{label}}
 </template>
 

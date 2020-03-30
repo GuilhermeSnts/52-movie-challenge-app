@@ -1,6 +1,6 @@
 <template lang="pug">
   div(class="search-bar")
-    WSearch( :movieList="getMoviesList" @search="searchMovies")
+    WSearch( :movieList="getMoviesList" @search="searchMovies" @action="assignWatchedMovie")
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
     ...mapGetters("movies", ["getMoviesList"])
   },
   methods: {
-    ...mapActions("movies", ["searchMovies"])
+    ...mapActions("movies", ["searchMovies", "assignWatchedMovie"])
   }
 };
 </script>

@@ -3,6 +3,7 @@
     WDatalist(
       expanse
       roundLeft
+      v-model="value"
       placeholder="Add a movie"
       :data="movieList"
       @filter="toSearch"
@@ -10,6 +11,7 @@
     WButton(
       label="Add"
       roundRight
+      @clicked="action()"
       )
 </template>
 
@@ -17,6 +19,9 @@
 import WButton from "../atoms/WButton";
 import WDatalist from "../atoms/WDatalist";
 export default {
+  data: () => ({
+    value: ""
+  }),
   components: {
     WButton,
     WDatalist
@@ -25,9 +30,15 @@ export default {
   props: {
     movieList: Array
   },
+
   methods: {
+
     toSearch(term) {
       this.$emit("search", term);
+    },
+
+    action() {
+      this.$emit("action", this.value);
     }
   }
 };

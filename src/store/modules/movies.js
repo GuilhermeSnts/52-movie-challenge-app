@@ -25,6 +25,9 @@ export default {
     },
     setGuestSession(store, payload) {
       store.guestSession = payload;
+    },
+    pushWatchedMovie(store, payload) {
+      store.watchedMovies.push(payload);
     }
   },
   actions: {
@@ -40,6 +43,11 @@ export default {
       const uri = `https://api.themoviedb.org/3/authentication/guest_session/new?api_key=${getters.getMovieApiKey}`;
       const session = await fetch(uri).then(res => res.data);
       commit("setGuestSession", session);
+    },
+
+    async assignWatchedMovie({ commit }, payload) {
+      console.log(payload);
+      commit("pushWatchedMovie", payload);
     }
   }
 };
