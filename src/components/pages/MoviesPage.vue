@@ -1,6 +1,5 @@
 <template lang="pug">
-  div(class="user-movies")
-    MoviesTemplate
+  MoviesTemplate
 </template>
 
 <script>

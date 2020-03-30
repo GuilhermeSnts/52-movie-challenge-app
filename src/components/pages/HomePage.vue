@@ -1,6 +1,5 @@
 <template lang="pug">
-  div (class=".home")
-    HomeTemplate
+  HomeTemplate
 </template>
 
 <script>
